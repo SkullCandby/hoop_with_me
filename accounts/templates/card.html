@@ -1,0 +1,226 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #131313;
+  margin-top: 0;
+  width: 100%;
+  height: 70%;
+}
+
+.container{
+  position: absolute;
+  width: 100%;
+  height: 70%;
+  top:0;
+  left: 0;
+}
+
+.container .card{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 70%;
+  background: #232323;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.container .card:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background: rgb(252,247,94);
+  clip-path: circle(300px at 80% 20%);
+  transition: 0.5s ease-in-out;
+}
+
+.container .card:hover:before{
+  clip-path: circle(600px at 80% -20%);
+}
+
+.container .card:after{
+  content: 'HOOP WITH ME';
+  position: absolute;
+  top: 2%;
+  left: 1%;
+  font-size: 12em;
+  font-weight: 800;
+  font-style: italic;
+  color: rgba(51,51,255,0.5)
+}
+
+.container .card .imgBx{
+  position: absolute;
+  top: 22%;
+  margin-left: 25%;
+  transform: translateY(-50%);
+  z-index: 0;
+  width: 70%;
+  height: 75%;;
+  transition: 0.5s;
+}
+
+.container .card:hover .imgBx{
+  top: 10%;
+  transform: translateY(0%);
+
+}
+
+.container .card .imgBx img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-45%, -60%) ;
+  width: 100%;
+  height: 50%;
+}
+
+.container .card .contentBx{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  text-align: center;
+  transition: 1s;
+  z-index: 10;
+}
+
+.container .card:hover .contentBx{
+  height: 210px;
+}
+
+.container .card .contentBx h2{
+  position: absolute;
+  top: 25%;
+  left: 38.5%;
+  font-weight: 600;
+  font-size: 2em;
+  letter-spacing: 1px;
+  color: #fff;
+  margin: 0;
+}
+
+.container .card .contentBx .size, .container .card .contentBx .color {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 10px;
+  transition: 0.5s;opacity: 0;
+  visibility: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.container .card:hover .contentBx .size{
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.5s;
+}
+
+.container .card:hover .contentBx .color{
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.6s;
+  position: relative;
+  margin-left: 19%;
+  top: 55%;
+  font-size: 1em;
+}
+
+.container .card .contentBx .size h3, .container .card .contentBx .color h3{
+  color: #fff;
+  font-weight: 300;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: 10px;
+  margin-top: 5%;
+}
+
+.container .card .contentBx .size span{
+  width: 26px;
+  height: 26px;
+  text-align: center;
+  line-height: 26px;
+  font-size: 14px;
+  display: inline-block;
+  color: #111;
+  background: #fff;
+  margin: 0 5px;
+  transition: 0.5s;
+  color: #111;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.container .card .contentBx .size span:hover{
+  background: #9bdc28;
+}
+
+.container .card .contentBx .color span{
+  width: 20px;
+  height: 20px;
+  background: #ff0;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+
+
+.container .card .contentBx a{
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #111;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: 0.5s;
+  margin-top: 0%;
+}
+
+.container .card:hover .contentBx a{
+  opacity: 1;
+  transform: translateY(0px);
+  transition-delay: 0.75s;
+  position: relative;
+  margin-top: -1%;
+
+}
+
+</style>
+<body>
+<div class="container">
+  <div class="card">
+    <div class="imgBx">
+      <img src="https://www.pngarts.com/files/5/LeBron-James-PNG-Image-Background.png">
+    </div>
+    <div class="contentBx">
+      <h2 style='color: rgb(252,247,94);'>LEGOAT JAMES</h2>
+      <div class="size">
+      </div>
+      <div class="color">
+        <h3 style='font-size:3em; color: rgba(51,51,255)'>OVERALL</h3>
+        <a style='font-size:3em; color: rgb(252,247,94);'>98</a>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
