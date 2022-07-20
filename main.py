@@ -10,7 +10,7 @@ app = Flask(__name__, template_folder='C:/Users/dvmes/PycharmProjects/hoop with 
 mail = Mail(app)
 
 email_sender = 'gdmeshkov@gmail.com'
-email_password = 'leaDer2012'
+email_password = 'fdfsdf'
 email_rec = 'gdmeshkov@mail.ru'
 subject = 'ayo!! check this out '
 otp = None
