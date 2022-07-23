@@ -1,3 +1,4 @@
+from django.contrib.auth.models import Group
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import EmailMessage
 from django.http import HttpResponse
@@ -11,8 +12,10 @@ from .forms import *
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 
+
 from django.contrib.auth.decorators import login_required
 
+from .models import Customer
 from .tokens import account_activation_token
 
 # AIRDROP profile/game/etc
@@ -67,6 +70,12 @@ def register_page(request):
                 user = form.save(commit=False)
                 user.is_active = False
                 user.save()
+
+                customer = Customer.objects.create(
+                    user=user,
+                    name=user.username,
+                )
+                customer.save()
                 current_site = get_current_site(request)
                 mail_subject = 'Activate your blog account.'
                 message = render_to_string('activate.html', {
@@ -80,6 +89,8 @@ def register_page(request):
                     mail_subject, message, to=[to_email]
                 )
                 email.send()
+                # Added username after video because of error returning customer name if not added
+
                 messages.info(request, 'Please confirm your email address to complete the registration')
                 # return HttpResponse('Please confirm your email address to complete the registration')
         else:
@@ -94,7 +105,11 @@ def logOutUser(request):
 
 @login_required(login_url='login')
 def home_page(request):
-    context = {}
+    # print(request.user.customer)
+    customer = request.user.customer
+    form = CustomerForm(instance=customer)
+    print()
+    context = {'form': form}
     return render(request, 'home.html', context)
 
 
