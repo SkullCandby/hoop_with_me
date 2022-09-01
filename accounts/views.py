@@ -110,6 +110,10 @@ def home_page(request):
     form = CustomerForm(instance=customer)
     print()
     context = {'form': form}
+    if request.method == "POST":
+        form = CustomerForm(request.POST, request.FIELS, instance=customer)
+        if form.is_valid():
+            form.save()
     return render(request, 'home.html', context)
 
 

@@ -33,7 +33,7 @@ ALLOWED_HOSTS = ['192.168.178.40',
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'gdmeshkov@gmail.com'
-EMAIL_HOST_PASSWORD = 'cfwsvisgwztlsewk'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 
 # Application definition
