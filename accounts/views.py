@@ -108,12 +108,14 @@ def home_page(request):
     # print(request.user.customer)
     customer = request.user.customer
     form = CustomerForm(instance=customer)
-    print()
-    context = {'form': form}
-    if request.method == "POST":
-        form = CustomerForm(request.POST, request.FIELS, instance=customer)
+    profile_pic = "../../static/" + str(customer.profile_pic) # IMG_20220329_0007.jpg
+    # "https://www.pngarts.com/files/5/LeBron-James-PNG-Image-Background.png"hh
+    context = {'form': form, 'profile_pic': profile_pic, 'overall': 98}
+    """if request.method == "POST":
+        form = UploadFileForm()
         if form.is_valid():
-            form.save()
+            handle_uploaded_file(request.FILES['file'])
+            return HttpResponseRedirect('/success/url/')"""
     return render(request, 'home.html', context)
 
 

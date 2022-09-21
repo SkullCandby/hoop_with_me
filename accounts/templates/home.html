@@ -34,9 +34,10 @@
 </head>
 <body>
 <nav class="upper_nav">
-
+    {% with overall=overall %}
     {% include "card.html" %}
-</nav>
+    {% endwith %}
+ </nav>
 <a class="change_pp" href="{% url 'logout' %}" >Change profile picture</a>
 
 <form method="POST" action="" enctype="multipart/form-data" class="customer_form">
